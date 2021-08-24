@@ -60,6 +60,11 @@ export default new Vuex.Store({
     },
     addUserInfo(state,newUser){
       state.userList.push(newUser)
+    },
+    editSelf(state,selfInfo){
+      state.userInfo.username = selfInfo.username
+      state.userInfo.address = selfInfo.address
+      state.userInfo.phone = selfInfo.phone
     }
   },
   actions: {
@@ -86,6 +91,9 @@ export default new Vuex.Store({
     },
     addUserInfo({commit},newUser){
       commit('addUserInfo',newUser)
+    },
+    editSelf({commit},selfInfo){
+      commit('editSelf',selfInfo)
     }
   },
 
